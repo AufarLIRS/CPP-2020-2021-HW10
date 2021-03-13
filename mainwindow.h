@@ -4,8 +4,7 @@
 #include <QMainWindow>
 #include <LogFile.h>
 
-// IF YOU WANT TO CHANGE THIS QUEST'S CODE YOU MUST CHANGE MESSAGE'S ABOUT WINNING LOCATION
-// Secret quest's code
+// Secret quest's code; code's length must be equal 4 symbols
 const std::string code = "3142";
 
 static int i = 0;
@@ -25,7 +24,7 @@ public:
   MainWindow(QWidget* parent = nullptr);
   ~MainWindow();
   // Handle User's defeat
-  void HandleUserLost()
+  void handleUserLost()
   {
     MainWindow::resetGame();
     LogFile::getLogFile().write("User has lost...\n");
@@ -43,6 +42,8 @@ private slots:
   void on_resetButton_clicked();
 
   void resetGame();
+
+  void checkWin();
 
 private:
   Ui::MainWindow* ui;
