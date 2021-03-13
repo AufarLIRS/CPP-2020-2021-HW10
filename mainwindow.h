@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <LogFile.h>
 
+// IF YOU WANT TO CHANGE THIS QUEST'S CODE YOU MUST CHANGE MESSAGE'S ABOUT WINNING LOCATION
 // Secret quest's code
 const std::string code = "3142";
 
