@@ -1,5 +1,6 @@
 #include "gamelogic.h"
-
+#include <algorithm>
+#include "gamestate.h"
 GameLogic::GameLogic()
 {
   this->roolOrder = { 1, 2, 3, 4 };
@@ -8,13 +9,26 @@ GameLogic::GameLogic()
 
 GameLogic::GameLogic(int first, int second, int third, int fourth)
 {
-  this->roolOrder[0] = first;
-  this->roolOrder[1] = second;
-  this->roolOrder[2] = third;
-  this->roolOrder[3] = fourth;
+  roolOrder = { first, second, third, fourth };
+  userInputOrder = { 0, 0, 0, 0 };
+  state = GameState::Play;
 }
 
-bool GameLogic::isCorrectInput(int inputData)
+GameState GameLogic::GetStatusFromUserStep(int inputData)
 {
-  //Использовать find
+  int indexOfLastZeroInInputOrder =
+      std::distance(userInputOrder.begin(), std::find(userInputOrder.begin(), userInputOrder.end(), 0));
+  userInputOrder[indexOfLastZeroInInputOrder] = inputData;
+  if (roolOrder[indexOfLastZeroInInputOrder] == inputData)
+  {
+    if (indexOfLastZeroInInputOrder == (int)roolOrder.size() - 1)
+    {
+      state = GameState::Win;
+    }
+  }
+  else
+  {
+    state = GameState::Losing;
+  }
+  return state;
 }

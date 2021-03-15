@@ -2,20 +2,18 @@
 #define GAMELOGIC_H
 
 #include <array>
-
+#include "gamestate.h"
 class GameLogic
 {
-  /*int firstInOrder;
-  int secondInOrder;
-  int thirdInOrder;
-  int fourthInOrder;*/
   std::array<int, 4> roolOrder;
   std::array<int, 4> userInputOrder;
-  GameLogic();
+  GameState state;
 
 public:
+  GameLogic();
   GameLogic(int first, int second, int third, int fourth);
-  bool isCorrectInput(int inputData);
+
+  GameState GetStatusFromUserStep(int inputData);
 };
 
 #endif  // GAMELOGIC_H
