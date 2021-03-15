@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "gamelogic.h"
+#include "logersingleton.h"
 #include <QMainWindow>
 #include "gamestate.h"
 #include <QCheckBox>
@@ -16,6 +18,8 @@ class MainWindow : public QMainWindow
   Q_OBJECT
 
 public:
+  GameLogic game;
+  LogerSingleton logerAcces;
   MainWindow(QWidget* parent = nullptr);
   void Update(GameState state, QCheckBox* updatingCheckbox);
   void ResetGame();

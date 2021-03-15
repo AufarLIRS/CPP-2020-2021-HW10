@@ -5,8 +5,6 @@
 #include "gamestate.h"
 #include "logersingleton.h"
 
-GameLogic game;
-LogerSingleton logerAcces;
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
   game = GameLogic(4, 3, 2, 1);
