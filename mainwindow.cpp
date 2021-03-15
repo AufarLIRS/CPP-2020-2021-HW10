@@ -33,7 +33,7 @@ void MainWindow::reset()
   }
   catch (...)
   {
-//    log_.persist(R"(lastlog.txt)");
+    log_.persist(R"(lastlog.txt)");
   }
 }
 
@@ -70,7 +70,7 @@ void MainWindow::checkButton(int Id)
         }
         catch (...)
         {
-//          log_.persist(R"(lastlog.txt)");
+          log_.persist(R"(lastlog.txt)");
         }
         break;
 
@@ -83,7 +83,7 @@ void MainWindow::checkButton(int Id)
         }
         catch (...)
         {
-//          log_.persist(R"(lastlog.txt)");
+          log_.persist(R"(lastlog.txt)");
         }
         break;
 
@@ -96,7 +96,7 @@ void MainWindow::checkButton(int Id)
         }
         catch (...)
         {
-//          log_.persist(R"(lastlog.txt)");
+          log_.persist(R"(lastlog.txt)");
         }
         break;
 
@@ -109,7 +109,7 @@ void MainWindow::checkButton(int Id)
         }
         catch (...)
         {
-//          log_.persist(R"(lastlog.txt)");
+          log_.persist(R"(lastlog.txt)");
         }
         break;
     }
@@ -124,7 +124,7 @@ void MainWindow::checkButton(int Id)
       }
       catch (...)
       {
-//        log_.persist(R"(lastlog.txt)");
+        log_.persist(R"(lastlog.txt)");
       }
       reset();
     }
@@ -139,7 +139,7 @@ void MainWindow::checkButton(int Id)
     }
     catch (...)
     {
-//      log_.persist(R"(lastlog.txt)");
+      log_.persist(R"(lastlog.txt)");
     }
     reset();
   }

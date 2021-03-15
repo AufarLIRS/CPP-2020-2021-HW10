@@ -27,12 +27,12 @@ Logger::~Logger() noexcept
   }
 }
 
-//void persist(fs::path const& path)
-//{
-//  logfile.close();
-//  fs::rename(Logpath, path);
-//  Logpath.clear();
-//}
+void persist(fs::path const& path)
+{
+  logfile.close();
+  fs::rename(Logpath, path);
+  Logpath.clear();
+}
 
 Logger& Logger::operator<<(std::string_view msg)
 {

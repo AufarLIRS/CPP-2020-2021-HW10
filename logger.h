@@ -18,7 +18,7 @@ public:
   Logger();
   ~Logger() noexcept;
 
-//  void persist(fs::path const& path);
+  void persist(fs::path const& path);
   Logger& operator<<(std::string_view msg);
 
   Logger(Logger const&) = delete;
