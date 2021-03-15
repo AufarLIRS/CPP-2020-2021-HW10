@@ -2,5 +2,4 @@
 
 Loger::Loger()
 {
-
 }
