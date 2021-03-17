@@ -5,7 +5,7 @@
 class LogFile
 {
 public:
-  static LogFile* getInstance();
+  static LogFile& getInstance();
   void log(const std::string);
   LogFile(const LogFile&) = delete;
   void operator=(const LogFile&) = delete;
