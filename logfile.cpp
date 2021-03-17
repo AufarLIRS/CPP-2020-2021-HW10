@@ -11,7 +11,7 @@ void LogFile::log(const std::string text)
 {
   this->file << text << std::endl;
 }
-LogFile* LogFile::getInstance()
+LogFile& LogFile::getInstance()
 {
   static LogFile instance;
   return &instance;
