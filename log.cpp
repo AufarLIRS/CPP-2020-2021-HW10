@@ -2,23 +2,21 @@
 
 Log::Log()
 {
-    std::fstream file;
-    file.open("log", std::fstream::app);
-    this->file_ = std::move(file);
+  this->file_ = std::fstream("log", std::fstream::app);
 }
 
-Log* Log::getInstance()
+Log& Log::getInstance()
 {
-    static Log instance;
-    return &instance;
+  static Log instance;
+  return instance;
 }
 
 void Log::log(const std::string s)
 {
-    this->file_ << s << std::endl;
+  this->file_ << s << std::endl;
 }
 
 Log::~Log()
 {
-    this->file_.close();
+  this->file_.close();
 }
