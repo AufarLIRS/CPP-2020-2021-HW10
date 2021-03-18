@@ -7,7 +7,7 @@
 // Secret quest's code; code's length must be equal 4 symbols
 const std::string code = "3142";
 
-static int i = 0;
+static int correctPushes = 0;
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -27,7 +27,7 @@ public:
   void handleUserLost()
   {
     MainWindow::resetGame();
-    LogFile::getLogFile().write("User has lost...\n");
+    LogFile::getInstance().write("User has lost...\n");
   };
 
 private slots:

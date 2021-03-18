@@ -1,22 +1,19 @@
 #ifndef LOGFILE_H
 #define LOGFILE_H
-#include <QFile>
+#include <fstream>
 
 class LogFile
 {
 private:
-  LogFile()
-  {
-  }
-  LogFile(const LogFile&);
-  LogFile& operator=(LogFile&);
+  std::ofstream logFile;  // logs
+  LogFile();              // constructor
 
 public:
-  static QFile& getLogFile()
-  {
-    static QFile logFile("d:\\log.txt");
-    return logFile;
-  }
+  ~LogFile();                                   // destructor
+  LogFile(LogFile const&) = delete;             // copy
+  LogFile& operator=(LogFile const&) = delete;  //=
+  void write(std::string);                      // write into log
+  static LogFile& getInstance();
 };
 
 #endif  // LOGFILE_H
