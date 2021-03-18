@@ -11,7 +11,7 @@ class Loger
 
 public:
   void Log(std::string logString);
-  void EndLog();
+  ~Loger();
   friend class LogerSingleton;
 };
 

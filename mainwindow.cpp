@@ -15,8 +15,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
 MainWindow::~MainWindow()
 {
   delete ui;
-  logerAcces.GetInstance().Log("End!");
-  logerAcces.GetInstance().EndLog();
 }
 
 void MainWindow::on_pushButton_1_clicked()

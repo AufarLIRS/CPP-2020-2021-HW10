@@ -14,12 +14,8 @@ void Loger::Log(std::string logString)
   fileStream << logString << std::endl;
 }
 
-void Loger::EndLog()
+Loger::~Loger()
 {
+  this->Log("End!");
   fileStream.close();
 }
-//????????????
-/*Loger::~Loger()
-{
-  fileStream.close();
-}*/
