@@ -2,7 +2,6 @@
 #include "QDebug"
 LogFile::LogFile()
 {
-  std::fstream file_;
   file.open("log.txt", std::fstream::app);
   if (file.is_open())
     qDebug() << "запись";
