@@ -24,7 +24,6 @@ void MainWindow::reset()
 
   ui->label->setText("Resetting game");
   Log::GetInstance().Append("Resetting game");
-
 }
 
 void MainWindow::checkButton(int Id)
