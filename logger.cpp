@@ -1,41 +1,23 @@
 #include "logger.h"
 
-fs::path Logpath;
-std::ofstream logfile;
-
-Logger::Logger()
+Log::Log()
 {
-  //    auto name = QUuid::toString(QUuid::createUuid());
-  auto name = "log";
-  Logpath = fs::temp_directory_path() / (name = ".tmp");
-  logfile.open(Logpath.c_str(), std::ios::out | std::ios::trunc);
-  qDebug() << "log file was created!";
+  file.setFileName("Logger.txt");
+  file.open(QIODevice::WriteOnly);
 }
 
-Logger::~Logger() noexcept
+Log::~Log()
 {
-  try
-  {
-    if (logfile.is_open())
-      logfile.close();
-    if (!Logpath.empty())
-      fs::remove(Logpath);
-    qDebug() << "log file was deleted!";
-  }
-  catch (...)
-  {
-  }
+  file.close();
 }
 
-void persist(fs::path const& path)
+Log& Log::GetInstance()
 {
-  logfile.close();
-  fs::rename(Logpath, path);
-  Logpath.clear();
+  static Log log;
+  return log;
 }
 
-Logger& Logger::operator<<(std::string_view msg)
+void Log::Append(QByteArray string)
 {
-  logfile << msg.data() << '\n';
-  return *this;
+  file.write(string + "\n");
 }

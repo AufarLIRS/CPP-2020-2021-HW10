@@ -21,7 +21,6 @@ class MainWindow : public QMainWindow
 public:
   MainWindow(QWidget* parent = nullptr);
   ~MainWindow();
-  Logger log_;
 
 private slots:
   void checkButton(int Id);

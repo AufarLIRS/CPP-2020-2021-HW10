@@ -16,7 +16,6 @@ class Game
   static int now;
 
 public:
-  static Logger log_;
   static void RandomNumbers();
   static bool CheckNumbers(int button);
   static bool CheckResult();

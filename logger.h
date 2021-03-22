@@ -2,27 +2,25 @@
 #define LOGGER_H
 
 #include <QFile>
-#include <QUuid>
-#include <filesystem>
 #include <fstream>
 #include <QDebug>
+#include "QFileInfo"
 
-namespace fs = std::filesystem;
-
-class Logger
+class Log
 {
-  fs::path Logpath;
-  std::ofstream logfile;
+  QFile file;
+
+  Log();
+  ~Log();
 
 public:
-  Logger();
-  ~Logger() noexcept;
+  static Log& GetInstance();
+  void Append(QByteArray string);
 
-  void persist(fs::path const& path);
-  Logger& operator<<(std::string_view msg);
-
-  Logger(Logger const&) = delete;
-  Logger& operator=(Logger const&) = delete;
+  Log(const Log&) = delete;
+  Log& operator=(const Log&) = delete;
+  Log(Log&&) = delete;
+  Log& operator=(Log&&) = delete;
 };
 
 #endif  // LOGGER_H
