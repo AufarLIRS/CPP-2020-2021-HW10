@@ -29,6 +29,8 @@ private slots:
 
   void on_pushButton_5_clicked();
 
+  void Reset();
+
 private:
   Ui::MainWindow* ui;
 };

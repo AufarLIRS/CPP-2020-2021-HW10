@@ -9,31 +9,31 @@ std::string Number_Guessing::password = "4132";
 int Number_Guessing::iterator = 0;
 bool Number_Guessing::IsRightNumber(char number)
 {
-  std::string s = "кнопка ";
+  std::string s = "Button ";
   if (iterator == 4)
   {
-    LogFile::getInstance()->log("You Win!");
+    Logfile::getInstance().log("You Win!");
     return true;
   }
   if (password[iterator] == number)
   {
     s += number;
-    s += "is Right";
-    LogFile::getInstance()->log(s);
+    s += " is Right";
+    Logfile::getInstance().log(s);
     iterator++;
     return true;
   }
   else
   {
     s += number;
-    s += "is Wrong";
-    LogFile::getInstance()->log(s);
+    s += " is Wrong";
+    Logfile::getInstance().log(s);
     return false;
   }
 };
 
 void Number_Guessing::Reset()
 {
-  LogFile::getInstance()->log("Restart");
+  Logfile::getInstance().log("Restart");
   iterator = 0;
 };

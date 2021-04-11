@@ -14,10 +14,10 @@ void Logfile::log(const std::string text)
 }
 Logfile& Logfile::getInstance()
 {
-  static LogFile instance;
-  return &instance;
+  static Logfile instance;
+  return instance;
 }
-Logfile::~LogFile()
+Logfile::~Logfile()
 {
   qDebug() << "Close the record";
   this->file.close();
